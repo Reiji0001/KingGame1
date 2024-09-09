@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Irena</title>
+    <link rel="icon" href="https://steamuserimages-a.akamaihd.net/ugc/1584659528211360104/D3279C39EF45D031182F0DBE0327D924875F0A72/?imw=512&&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false" type="image/png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Press Start 2P', cursive;
+            cursor: default;
+            background-image: url('https://steamuserimages-a.akamaihd.net/ugc/1684897951205318613/66801847F5A844EEAADBCFA479CB5AC390131164/?imw=5000&imh=5000&ima=fit&impolicy=Letterbox&imcolor=%23000000&letterbox=false');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            z-index: 1;
+            -webkit-user-select: none; /* Ngăn chặn chọn văn bản trên Chrome/Safari */
+            -moz-user-select: none; /* Ngăn chặn chọn văn bản trên Firefox */
+            -ms-user-select: none; /* Ngăn chặn chọn văn bản trên Internet Explorer/Edge */
+            user-select: none; /* Ngăn chặn chọn văn bản trên trình duyệt hiện đại */
+        }
+
+        .slideUp {
+            animation: slideUpAnimation 3s forwards;
+        }
+
+        h1 {
+            transform: translateY(10px);
+            border: 5px solid #fff;
+            padding: 40px;
+            border-radius: 5px;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 1);
+            font-size: 48px;
+            text-shadow: 2px 2px 4px #000000;
+            position: relative;
+            color: white;
+        }
+
+        h1::before, h1::after {
+            content: '';
+            position: absolute;
+            top: -15px; 
+            left: -15px;
+            right: -15px;
+            bottom: -15px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            z-index: 2;
+            transition: all 0.3s ease-in-out;
+        }
+
+        h1:hover::before, h1:hover::after {
+            top: -20px;
+            left: -20px;
+            right: -20px;
+            bottom: -20px;
+            box-shadow: 0 0 30px rgba(255, 255, 255, 0.8);
+        }
+
+        @keyframes slideUpAnimation {
+            0% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+            }
+        }
+
+        .fade-out {
+            animation: fadeOut 5s forwards;
+        }
+
+        @keyframes fadeOut {
+            0% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* Snowflake and Blur Effect CSS */
+        .snowflake {
+            color: #fff;
+            font-size: 2.5em;
+            font-family: Arial, sans-serif;
+            text-shadow: 0 0 5px #000;
+            position: fixed;
+            top: -10%;
+            z-index: 9999;
+            user-select: none;
+            cursor: default;
+            animation-name: snowflakes-fall, snowflakes-shake;
+            animation-duration: 10s, 3s;
+            animation-timing-function: linear, ease-in-out;
+            animation-iteration-count: infinite, infinite;
+            animation-play-state: running, running;
+        }
+
+        .blur-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(128, 127, 127, 0.205);
+            backdrop-filter: blur(2px);
+            border-radius: 20px;
+            pointer-events: none;
+            z-index: -3;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="title">Click Here, Sir</h1>
+
+    <!-- Hiệu ứng blur -->
+    <div class="blur-effect"></div>
+
+    <script>
+        // Vô hiệu hóa chuột phải
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
+
+        // Vô hiệu hóa copy
+        document.addEventListener('copy', function(e) {
+            e.preventDefault();
+        });
+
+        // Vô hiệu hóa phím F12 (Developer Tools)
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'F12' || (e.ctrlKey && e.shiftKey && e.key === 'I')) {
+                e.preventDefault();
+            }
+        });
+
+        // Chuyển hướng khi click vào tiêu đề
+        document.getElementById('title').addEventListener('click', function() {
+            this.classList.add('slideUp'); // Thêm lớp slideUp khi click
+            setTimeout(() => {
+                window.location.href = 'Reiji.html'; // Chuyển hướng sau khi chạy animation
+            }, 200);
+        });
+    </script>
+</body>
+</html>
